@@ -4,6 +4,8 @@ import "react-phone-input-2/lib/style.css";
 
 const PhoneInput = PhoneInputModule.default || PhoneInputModule;
 
+const API_URL = "https://sids-automations-contact-manager.onrender.com";
+
 export default function App() {
   const [leads, setLeads] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -24,7 +26,7 @@ export default function App() {
     };
 
     try {
-      const res = await fetch("http://localhost:3000/login", {
+      const res = await fetch(`${API_URL}/login`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -56,7 +58,7 @@ export default function App() {
     };
 
     try {
-      const res = await fetch("http://localhost:3000/register", {
+      const res = await fetch(`${API_URL}/register`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -85,7 +87,7 @@ export default function App() {
   };
 
   const loadLeads = async () => {
-    const res = await fetch("http://localhost:3000/contacts", {
+    const res = await fetch(`${API_URL}/contacts`, {
       headers: {
         Authorization: token,
       },
@@ -114,7 +116,7 @@ export default function App() {
 
     try {
       if (editingContact) {
-        await fetch(`http://localhost:3000/contacts/${editingContact._id}`, {
+        await fetch(`${API_URL}/contacts/${editingContact._id}`, {
           method: "PUT",
           headers: {
             "Content-Type": "application/json",
@@ -125,7 +127,7 @@ export default function App() {
 
         setMessage("Contact successfully updated!");
       } else {
-        await fetch("http://localhost:3000/contacts", {
+        await fetch(`${API_URL}/contacts`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -156,7 +158,7 @@ export default function App() {
     if (!confirmDelete) return;
 
     try {
-      await fetch(`http://localhost:3000/contacts/${id}`, {
+      await fetch(`${API_URL}/contacts/${id}`, {
         method: "DELETE",
         headers: {
           Authorization: token,
