@@ -1,6 +1,25 @@
 # 🚀 Sid's Automations Contact Manager
 
-A Fullstack SaaS Contact Management Application built with React, Node.js, Express, MongoDB Atlas, JWT Authentication, and n8n Automation.
+![React](https://img.shields.io/badge/React-19-blue)
+![Node.js](https://img.shields.io/badge/Node.js-Express-green)
+![MongoDB](https://img.shields.io/badge/MongoDB-Atlas-success)
+![JWT](https://img.shields.io/badge/Auth-JWT-orange)
+![Render](https://img.shields.io/badge/Backend-Render-purple)
+![Vercel](https://img.shields.io/badge/Frontend-Vercel-black)
+
+A modern Fullstack SaaS Contact Management Application built with React, Node.js, Express, MongoDB Atlas, JWT Authentication, and n8n-ready automation workflows.
+
+---
+
+## 🌐 Live Demo
+
+### Frontend
+
+https://sids-automations-contact-manager.vercel.app
+
+### Backend API
+
+https://sids-automations-contact-manager.onrender.com
 
 ---
 
@@ -10,18 +29,39 @@ Sid's Automations Contact Manager is a modern fullstack application designed to 
 
 The project was built following real-world SaaS architecture principles, including authentication, protected routes, cloud database integration, and automation-ready workflows.
 
+This application demonstrates the complete development cycle of a production-ready Fullstack project, from frontend development to cloud deployment.
+
+---
+
+## 🏗 Architecture
+
+```text
+React + Vite Frontend
+          │
+          ▼
+Node.js + Express API
+          │
+          ▼
+MongoDB Atlas Database
+          │
+          ▼
+n8n Automation Layer
+```
+
 ---
 
 ## 🏆 Key Achievements
 
-* Built a complete Fullstack CRUD Application
-* Implemented JWT Authentication
-* Secured passwords using bcryptjs
-* Integrated MongoDB Atlas Cloud Database
-* Connected external automations through n8n Webhooks
-* Developed a responsive user interface using React
-* Created protected API routes with Express.js
-* Implemented user-isolated data architecture
+* Complete Fullstack CRUD Application
+* JWT Authentication System
+* Password Encryption with bcryptjs
+* MongoDB Atlas Cloud Integration
+* Protected API Routes
+* User-Isolated Data Architecture
+* Cloud Deployment (Render + Vercel)
+* Automation-Ready Backend Structure
+* Responsive User Interface
+* Production Environment Configuration
 
 ---
 
@@ -29,31 +69,37 @@ The project was built following real-world SaaS architecture principles, includi
 
 ### 🔐 Login Screen
 
-![Login](./screenshots/login.png)
+<p align="center">
+  <img src="./screenshots/login.png" alt="Login Screen" width="900"/>
+</p>
 
-Users can securely access their dashboard using JWT authentication.
+Secure user authentication using JWT tokens.
 
 ---
 
 ### 📝 Account Registration
 
-![Register](./screenshots/register.png)
+<p align="center">
+  <img src="./screenshots/register.png" alt="Register Screen" width="900"/>
+</p>
 
-New users can create accounts with encrypted passwords stored securely in MongoDB Atlas.
+Create accounts with encrypted passwords stored securely in MongoDB Atlas.
 
 ---
 
 ### 📊 Contact Management Dashboard
 
-![Dashboard](./screenshots/dashboard.png)
+<p align="center">
+  <img src="./screenshots/dashboard.png" alt="Dashboard Screen" width="900"/>
+</p>
 
-Complete contact management system featuring:
+Complete contact management dashboard featuring:
 
 * Contact Creation
 * Contact Editing
 * Contact Deletion
 * Contact Search
-* Real-time Updates
+* Real-Time Updates
 * Contact Counter Dashboard
 
 ---
@@ -62,55 +108,63 @@ Complete contact management system featuring:
 
 ### Authentication & Security
 
-✔ User Registration
+✅ User Registration
 
-✔ User Login
+✅ User Login
 
-✔ JWT Authentication
+✅ JWT Authentication
 
-✔ Password Encryption with bcryptjs
+✅ Password Encryption with bcryptjs
 
-✔ Protected Routes
+✅ Protected Routes
 
-✔ User-Isolated Contact Data
+✅ User-Isolated Contact Data
 
 ---
 
 ### Contact Management
 
-✔ Create Contacts
+✅ Create Contacts
 
-✔ Read Contacts
+✅ Read Contacts
 
-✔ Update Contacts
+✅ Update Contacts
 
-✔ Delete Contacts
+✅ Delete Contacts
 
-✔ Search Contacts
+✅ Search Contacts
 
-✔ Contact Dashboard
+✅ Dashboard Statistics
 
-✔ International Phone Number Support
+✅ International Phone Number Support
 
 ---
 
 ### Database
 
-✔ MongoDB Atlas
+✅ MongoDB Atlas
 
-✔ Mongoose ODM
+✅ Mongoose ODM
 
-✔ Cloud Database Storage
+✅ Cloud Database Storage
+
+---
+
+### Deployment
+
+✅ Vercel Frontend
+
+✅ Render Backend
+
+✅ MongoDB Atlas Database
 
 ---
 
 ### Automation
 
-✔ n8n Webhook Integration
+✅ n8n Webhook Integration
 
-✔ Automation-Ready Architecture
-
-✔ WhatsApp Integration Structure
+✅ Automation-Ready Architecture
 
 ---
 
@@ -134,11 +188,16 @@ Complete contact management system featuring:
 * bcryptjs
 * dotenv
 
+### Cloud & Deployment
+
+* Vercel
+* Render
+* MongoDB Atlas
+
 ### Automation
 
 * n8n
 * Webhooks
-* Z-API (planned integration)
 
 ---
 
@@ -147,20 +206,20 @@ Complete contact management system featuring:
 ```bash
 sids-automations-contact-manager
 │
-├── screenshots
-│   ├── login.png
-│   ├── register.png
-│   └── dashboard.png
-│
 ├── Backend
-│   ├── models
 │   ├── server.js
-│   └── package.json
+│   ├── package.json
+│   └── .env
 │
 ├── Frontend
 │   ├── src
 │   ├── public
 │   └── package.json
+│
+├── screenshots
+│   ├── login.png
+│   ├── register.png
+│   └── dashboard.png
 │
 └── README.md
 ```
@@ -180,7 +239,7 @@ git clone https://github.com/renancardosofullstack/sids-automations-contact-mana
 ```bash
 cd Backend
 npm install
-node server.js
+npm start
 ```
 
 ### Frontend Setup
@@ -208,15 +267,15 @@ N8N_WEBHOOK_URL=your_n8n_webhook_url
 ## 🚀 Future Improvements
 
 * Contact Categories
+* Contact Tags
 * Contact Notes
-* Tags System
-* User Profiles
-* WhatsApp Automation
-* Email Automation
-* Dashboard Analytics
 * CSV Export
-* Excel Export
-* File Uploads
+* Dashboard Analytics
+* WhatsApp Integration
+* Email Automation
+* File Upload Support
+* Role-Based Access Control
+* User Profiles
 
 ---
 
@@ -224,25 +283,32 @@ N8N_WEBHOOK_URL=your_n8n_webhook_url
 
 ### Renan Melo de Oliveira Cardoso
 
-Fullstack Developer
+Fullstack Developer focused on modern web applications, APIs, cloud deployments, and business automation.
 
-**Skills**
+### Skills
 
 * React
+* JavaScript
 * Node.js
 * Express.js
 * MongoDB Atlas
 * REST APIs
 * JWT Authentication
-* Automation
-* n8n
-* JavaScript
+* Git & GitHub
+* n8n Automation
 
-GitHub:
+### GitHub
 
 https://github.com/renancardosofullstack
 
 ---
 
-⭐ If you found this project useful, consider giving it a star.
-# sids-automations-contact-manager
+## ⭐ Support
+
+If you found this project useful, consider giving it a star.
+
+It helps support future development and showcases the project to other developers.
+
+---
+
+### Built with ❤️ using React, Node.js, MongoDB Atlas and n8n.
