@@ -55,11 +55,11 @@ const auth = (req, res, next) => {
     }
 
     const decoded = jwt.verify(token, process.env.JWT_SECRET);
-
     req.userId = decoded.userId;
 
     next();
-  } catch {
+  } catch (err) {
+    console.log("❌ Erro auth:", err.message);
     return res.status(401).json({ error: "Invalid token" });
   }
 };
@@ -93,7 +93,7 @@ app.post("/contacts", auth, async (req, res) => {
 
     res.json(contact);
   } catch (err) {
-    console.log("❌ Erro:", err.message);
+    console.log("❌ Erro contacts POST:", err);
     res.status(500).json({ error: err.message });
   }
 });
@@ -106,6 +106,7 @@ app.get("/contacts", auth, async (req, res) => {
 
     res.json(contacts);
   } catch (err) {
+    console.log("❌ Erro contacts GET:", err);
     res.status(500).json({ error: err.message });
   }
 });
@@ -127,6 +128,7 @@ app.put("/contacts/:id", auth, async (req, res) => {
 
     res.json(contact);
   } catch (err) {
+    console.log("❌ Erro contacts PUT:", err);
     res.status(500).json({ error: err.message });
   }
 });
@@ -147,6 +149,7 @@ app.delete("/contacts/:id", auth, async (req, res) => {
       message: "Contact deleted successfully",
     });
   } catch (err) {
+    console.log("❌ Erro contacts DELETE:", err);
     res.status(500).json({ error: err.message });
   }
 });
@@ -174,6 +177,7 @@ app.post("/register", async (req, res) => {
       message: "User registered successfully",
     });
   } catch (err) {
+    console.log("❌ Erro register:", err);
     res.status(500).json({ error: err.message });
   }
 });
@@ -213,6 +217,7 @@ app.post("/login", async (req, res) => {
       token,
     });
   } catch (err) {
+    console.log("❌ Erro login:", err);
     res.status(500).json({ error: err.message });
   }
 });
